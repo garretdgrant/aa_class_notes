@@ -49,7 +49,50 @@ scope:
     2: Classe Defs
     2: module Defs
 
+    Inside method def, variables are paramaters
+    When invoking method, variables are arguments. 
 
+    ** exponent operator
+
+
+Array/Hash Defaults:
+    Making Array of Arrays
+     - naive approach Array.new(3,[]) Non-Unique subarrays
+     - correct way: Array.new(3){[]} || Arary.new(3) {Array.new} - This code runs once per index
+
+     example demo: Takeaway, be very careful when creating Arrays of arrays or hashes with arrays.
+        Array.new(3,[])
+     [38] pry(main)> grid.each {|el| p el.object_id}
+            680
+            680
+            680
+            => [[], [], []]
+            [39] pry(main)> 
+
+            Array.new(3){[]}
+            grid.each {|el| p el.object_id}
+            700
+            720
+            740
+            => [[], [], []]
+
+            [1] pry(main)> h = Hash.new([])
+            => {}
+            [2] pry(main)> h[5]
+            => []
+            [3] pry(main)> h[4].object_id == h[5].object_id
+            => true
+            [4] pry(main)> 
+
+
+            h = Hash.new {[]} ---> Be careful, this is not correct.
+            [5] pry(main)> h = Hash.new {|h,k| h[k]=[]} #this creates a hash where every key has a value of a new array
+            => {}
+            [6] pry(main)> h[1] << 1
+            => [1]
+            [7] pry(main)> h[2]
+            => []
+            [8] pry(main)> 
 
 
 
