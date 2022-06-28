@@ -1,1 +1,60 @@
 Refrences and Scopes
+
+ruby variables hold references (otherwise known as pointers)
+to objects stored in memory
+
+- = assignment operator
+- assigns the variable pointersdoesnt change or mutate the object stored in memory
+
+Mutability: state can be modified after it is created
+Immutable: state cannot be modified after it is created
+
+mutable: Sting, Array, Hash
+immutable: Integer, Float, Symbol
+
+Ref Diagram and Refrences
+Part 1:
+For mutable objects, we can get back a different object id
+example: "hello".object_id == "hello".object_id
+=> false
+
+Part 2: a =[1,2,3] a is a pointer to an array object, 
+which is full of pointers to the integers 1,2,3
+In other words, each element of the array is a pointer itself
+a[0].object_id == 1.object_id
+=> true
+
+a.push(2) mutates the array, but does not reassign a
+so, in otherwords the object_id of a does not change
+with push
+
+a << is the same as a.push
+.concat mutates, while += reassigns
+we can multi shovel a << 5 << 6 WHAT!!!!!!1
+
+cool way to copy array, but have diff object_id
+a = [1,2,3]
+b = a + [] (this also does a shallow dup)
+b = a.dup (only does top level array level) (shallow dup vs deep dup)
+now changes to either array will not change the other. 
+
+
+scope:
+ inside block we have access to all variables outside of block,
+ but when you declare variable inside of block, it is only
+ available inside the block. 
+
+ scope gates: we lose all access to variables outside, also outside has no access to these vars.
+    1: Method Defs
+    2: Classe Defs
+    2: module Defs
+
+
+
+
+
+
+
+
+
+
