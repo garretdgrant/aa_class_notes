@@ -95,6 +95,13 @@ Remote Commands
     git push -u <remote> <branch name>
         moves updates from .git to remote repository, sets upstream branch
 
+    git clone <url>
+        copies remote repo to local
+    git fetch <remote>
+        gets updated infor from remote repo
+    git pull <remote> <branch-name>
+        gets updates and merges from repo
+
 
 
 
