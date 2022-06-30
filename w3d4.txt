@@ -78,6 +78,23 @@ Local Reset Commands
         most recent commit
         affects working directory
 
+Remote Repositories
+    What is GitHub  
+        webservice that integrates git 
+        Great for multiple developers to work in teams
+
+Remote Commands
+    origin
+        keyword referring to default remote reop (default repo name)
+    git remote  
+        command to list remotes
+    git remote add <remote> <remote-url>
+        adds a remote
+    git push <remote> <branch name>
+        moves updates from .git to remote repository
+    git push -u <remote> <branch name>
+        moves updates from .git to remote repository, sets upstream branch
+
 
 
 
