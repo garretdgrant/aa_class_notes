@@ -60,8 +60,8 @@ Local Repo Commands 2
         punctuation
     git diff
         show what changed from last commit to staged changes
+        Lets make a change
 
-        
 
 
 
