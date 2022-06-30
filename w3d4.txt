@@ -1,0 +1,67 @@
+W3D4 Notes:
+Intro to Git and GitHub
+Cool Git Cheat Sheet: http://www.ndpsoftware.com/git-cheatsheet.html#loc=index;
+
+What is Git
+    Git is a VCS, Version Control System
+    Created by Linus Torvalds in 2005 for the Linux Kernal
+
+Why Git - Industry Standard
+    Versioning
+    Collaboration
+
+How Does Git Work
+    Repository: Stores a set of files or directories in VCS
+    files are saved in a commit
+    Does not store entire project in each commit
+    Each commit is a snapshot of what chaged since the last commit
+    cloning or downloading a repo grabs the entire commit history
+
+Gits Internal System
+    working directory
+        all files and folders on your local machine
+    Staging Area
+        tracks specified chages to working directory
+    Commit history
+        snapshots of project stored in .Git
+
+Local Repositories
+    local = On the machine
+    remote = online code hosting service like GitHub
+
+Local Repo Commands
+    git init
+        creates local git repo
+    git status
+        see current changes from last commit
+    git log 
+        see list of commits
+
+Local Repo Vocab
+    untracked
+        any newly introduced file (not in previous snapshot)
+    unstaged
+        file that exists in .git but has been chaged since last commit
+    staged
+        files added to staging area, awaiting commit
+    committed
+        files that have beeen committed to .git
+
+Local Repo Commands 2
+    git add <file-name>
+        add a single file to staging
+    git add .
+        add all files from curren directory
+    git add -A
+        add all files in entire working tree
+    git commit -m <message>
+        moves updates from staging area to .git
+        start with a verb;imperative mood; no emoji; no ending
+        punctuation
+    git diff
+        show what changed from last commit to staged changes
+
+        
+
+
+

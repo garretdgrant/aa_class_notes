@@ -1,1 +1,68 @@
 Recuresion Lecture
+    - Learning Objectives
+        have a process for approaching recursive problems
+        understand what the inductive step is and how to build inductive
+        know the advantages of memoization
+
+    - Lecture Outline
+        recursion for today
+        how to think about recursion
+        movie theater example
+        demos, a lot
+        recursion reasoning tips
+        kahoot!
+
+    -What we're not doing
+        use loops* - not using loops to Recurse, but can use loops and recursion together
+        modify method argument
+        use an optional private argument
+        think linear or procedural terms
+        be mentally refreshed at the end of the day
+        Head scratcher day. 
+
+    -What we are doing today    
+        write methods that call themselves
+        break problems down incrementally
+        trust that your method already works for all previous cases
+        learn a new way of thinking and programming
+
+    -What is a recursive function?
+        A  function that calls itself
+        solves a problem by breaking it down into smaller subproblems
+        has a base case - simplest "already solved" condition
+        builds back up incrementally using and inductive step
+        We can have n base cases***********
+
+    -Inductive step
+        How we use the return value of the previous stem to determine
+        the current result. 
+
+    -Problem Solving process
+        Understand the Problem****
+        Identify the Base case****
+        Write one step up from base case
+        Logic for inductie step
+        Code it Out
+    
+    -Code Demos
+
+    -memoization
+        is an optimization technique used to speed up methods
+        by storing the results of a costly function call and 
+        retruning the cached result when the same input occurs
+        again.
+
+        i.e. saving function calls to a variable
+
+    -Final thoughts
+        The Recursion process
+            simplify the problem
+
+
+    -tips
+        Assume your last call should return and build inductive step
+        from theater
+        Use small examples to visualize things
+
+        look at how you can reduce the input on each call
+        return same data type.
