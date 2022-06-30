@@ -61,6 +61,24 @@ Local Repo Commands 2
     git diff
         show what changed from last commit to staged changes
        
+    Git will not acknowledge directories without files inside
+
+Git Reset
+    powerful command used to undo local chages to the state of a Git repo
+
+Local Reset Commands
+    git reset file-name
+        remove a file from staging area
+        doesnt affect working directory
+    git reset   
+        unstage everything
+        doesnt affect working directory
+    git reset --hard
+        reset staging area and working directory to match the
+        most recent commit
+        affects working directory
+
+
 
 
 
