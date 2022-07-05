@@ -86,6 +86,8 @@ Array/Hash Defaults:
 
 
             h = Hash.new {[]} ---> Be careful, this is not correct.
+            Only do this when default values are mutable
+            if immutable we can just say h = Hash.new(0)
             [5] pry(main)> h = Hash.new {|h,k| h[k]=[]} #this creates a hash where every key has a value of a new array
             => {}
             [6] pry(main)> h[1] << 1

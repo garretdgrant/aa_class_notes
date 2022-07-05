@@ -68,3 +68,5 @@ def fast_all_fibs(n)
     # all_fibs(n-1) << all_fibs(n-1)[-1] + all_fibs(n-2)[-1]
     #let n = 3 ([0,1] << 1 + 0)
 end
+
+

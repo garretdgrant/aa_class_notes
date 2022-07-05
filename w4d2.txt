@@ -1,0 +1,41 @@
+Object Oriented Programming
+    OOP can feel like an overwhelming topic
+    lets talk 
+
+OOP Context
+    What is a programmer's greatest enemy?
+
+OOP Goal: Control Complexity
+    Countless ways to solve a problem
+    OOp gives a structured way to break down that Complexity
+        its relatively easy for humans to grasp
+
+Complexity Limits Solutions
+    code complexity limit = short-term memory limit
+    We can hold 4 things in short-term memory
+        if we reduce the mental complexity of code, we increase the
+        the complexity of the problems we can solve. 
+    
+    places related code in the same places
+    limits inter-dependencies in code
+    Helps keep code DRY
+    Intuitive because it mirrors phusical reality
+
+What is OOP
+    Procedural: Opposite of OOP
+        functions operating on data
+        emphasis: step by step instructions
+    Object-Oriented:
+        functions and data are combined into objects
+        emphasis: interactions between objects.
+
+    Objects Contain data
+    objects have methods
+    methods can access and modify an object's state (any data that it contains)
+    objects can interact with one another via their methods
+
+Classes vs Objects
+    A class is a blueprint for creating objects
+    An object is an instance of a class
+    In Ruby, onjects are instantiated using ::new, which calls #initialize
+    

@@ -1,0 +1,45 @@
+Abstract Data Types and Algorithims
+
+Abstract Data Types vs. Data Structures
+    ADT: Mathmatecal model that defines behavior, a set of properties and actions   (Can be implemented with different data types)
+    Data Structure: Actual implementation of the concept, with all of the properties
+        (i.e. the the building itself)
+
+Passenger Car "ADT"
+    Allow passengers to enter and exit vehicle
+    Accelerate
+    Decelerate
+    Direct
+
+What data structures could we use to implement these ADTs
+    ADT: List;               DS: Array, Hash, String
+    ADT: Dictionary;         DS: Hash, Array
+
+Stack (ADT)
+    Overview: Sequential collection of objects. All operations take place at one end (LIFO).
+        Add Remove peak(not-mutating)
+    properties  
+        Data interactions:
+        push: Add element to top
+        pop: remove and return ele from top of Stack
+
+        Attributes: Not necessary in definition of stack, but can be very useful 
+        peek: return top ele of stack, dont remove
+        size: return the current size of stack
+        empty? return true, false depending on wheterh or not stack empty
+
+Code review of Stack
+
+p: calls inspect and new line
+puts: calls to_s && adds a new line
+print: calls to_s
+
+Queue (ADT)
+    Follows Fifo
+
+    properties
+        enqueue(el): Add ele to back
+        dequeue: remove and return ele from front
+        show: show queue but dont return itself
+        size: return size
+        empty

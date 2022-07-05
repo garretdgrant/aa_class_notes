@@ -102,6 +102,23 @@ Remote Commands
     git pull <remote> <branch-name>
         gets updates and merges from repo
 
+Branching
+    master
+        default branch name (convention becoming main)
+    git branch
+        list branches
+    git checkout <branch-name>
+        switch to branch
+    git checkout -b <branch-name>
+        create and immediately switch to branch
+    git branch -d <branch-name>
+        deletes branch
+    git merge <branch-name>
+        merge <branch-name> into current branch
+
+        
+
+
 
 
 
