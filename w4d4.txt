@@ -1,0 +1,11 @@
+Intro to Rspec and TDD
+
+Lecture Objecties
+    Why do we test?
+    What is TDD?
+    What is the testing pyramid?
+    Be familiar with Rspec library
+
+Why do we test?
+    Working with a lot of people, dont want to break others code
+    

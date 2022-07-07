@@ -38,4 +38,154 @@ Classes vs Objects
     A class is a blueprint for creating objects
     An object is an instance of a class
     In Ruby, onjects are instantiated using ::new, which calls #initialize
-    
+
+UML Diagram
+    Sample Class
+    +@public_instance_var
+    -@private_instance_ar
+
+Encapsulation
+    All data and logic for an object to work should be encapsulated in that object.
+    No one else should have access to these things.
+        Indirect access available through the defined interface.
+        public and private keywords
+        attr_reader, attr_writer, attr_accessor
+
+Interface: 
+    A signature of methods, argument, argument types, and return types.
+    how can we interact with the underlying data of this object?
+
+Coupling:
+    The size and complexity of the interface between two objects
+    coupling refers to the degree of direct knowledge that one element has of another
+    tight coupling = hard to change
+        Large interface or too much knowledge of implementation
+    Well-designed interfaces lead to loose coupling
+
+    writers need to be invoked explicitly
+    #private, when we declare a method as private, we have no access from outside
+    also cannot do self.name for readers for private case, the exception is writers
+    private writers can only be called using self.pos = not other_pup.pos = 
+
+Abstraction
+    interface vs implementation
+    you only need to understand an objects interface to use it
+    no understanding of its implementation is needed. 
+
+Abstraction vs Encapsulation
+    Complementary but not the same
+    Encapsulation: Each class should be self-countained
+        if I modify a class's code, I shouldnt have to touch any other code
+    Abstraction: I shouldnt have to think about how a class is implemented to use it
+
+Polymorphism
+    Objects with the same interface are interchangeable
+    Even if they're different types
+    you can use this to eliminate type-checking logic. 
+
+Duck Typing
+    looks like a duck quacks like a duck its a duck
+    ruby is dynamically typed
+        you dont have to declare variable types
+        you can get no method errors due to this
+
+Inheritance: 
+    Keeps code DRY by letting you reuse class implementations
+    overwrite or extend this implementation in the subclass
+    very useful for Polymorphism   
+        interchage different subclasses of a parent class
+    Creates a hierarchy of classes back to BasicObject
+
+class SubClass < SuperClass
+    SuperClass
+        aka parent class, base class
+        A class that is used as the basis for Inheritance
+    SubClass
+        aka child class
+        A class that inherits from a parent class
+
+    SubClass Behavior:
+        Inherit all methods from parent class
+        can add methods to subclass without changing parent
+
+    super: Key Word
+        methods on subclass override those of the parent
+        you can invoke the parents overriden definition of a method using super
+        
+            super with arguments passes the given values into the super class'
+            version of the method
+
+            super without args implicitly uses those passed into sub class version of 
+            the method
+
+            super () to invoke the parent method with no args
+
+Modules/Mixins
+    Mixins are an alternative to inheritance as a way of adding functionality to a class
+    Mixins are modules (enumerable, comparable, kernel)
+    you can have multiple mixins in a single class
+    you can define methods and use self and @instance_variables, just like when defining
+    a class
+
+    ::include
+        this command adds a module's methods to a class as instance methods
+    ::extend
+        this command adds a module's methods to a class as class methods
+
+    Mixins vs Inheritance
+        types involved:
+        Inhertance uses classes
+        mixins are modules
+
+            what you get
+            inheritance adds both instance and class methods
+            mixins adds one or the other
+
+    How they're used
+    Inheritance is used for objects that relate to each other by type
+    (toyota is a car)
+
+    Mixins are used to add functionality to different kinds of things 
+    (a dragon and flying broom stick are both flyable)
+
+    Important OOP patterns for today
+
+    Null Object patterns
+        Standin for a null value that maintains a required interface
+        Avoids nomethoderror
+        ruby's nil itself is an example #everythingisanobject
+            maintains the full object interface
+            to_s, is_a?, nil?, etc.
+            doesnt include other methods you may need
+
+    Singleton patterns
+        Save space
+        Reuse reference to a stateless object 
+        Syntax:
+        include Singleton
+        Great example is blank spaces on the board, we can load the board with the same
+        exact instance of NullObject
+        NullAnimal.instance
+
+    OOP Tips
+        break things down into parts
+            nouns could be objects
+            verbs could be methods
+        single responsibility principle
+            a class does only one thing
+            beware of the "God Object"
+        Define the interfaces first, then implement.
+            An object can have multiple interfaces
+            Dont reach into an object. stick to the interfaces
+
+
+    OOP Path
+        Creativity - more an art than science
+        Experience - know where different desgn choices lead
+        Education - know common patterns and use them
+            learn to pick the right tool for the problem at hand.
+            were giving you some tools to start your toolbox
+
+            
+
+
