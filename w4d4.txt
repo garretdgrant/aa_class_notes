@@ -1,4 +1,5 @@
 Intro to Rspec and TDD
+https://open.appacademy.io/learn/ch---june-2022-sf-cohort/ruby/rspec-syntax
 
 Lecture Objecties
     Why do we test?
@@ -8,4 +9,29 @@ Lecture Objecties
 
 Why do we test?
     Working with a lot of people, dont want to break others code
+    Testing can help isolate problems, Example: We add a feature and break the program
+    Specs can show us the purpose of the program we are creating
+
+TDD Workflow:
+    Write Failing Test
+    Write just enought code to pass test
+    Improve the Code Quality (Refactor)
+    Repeat
+
+What do we Test? The testing pyramid
+    Test Pyramid:
+      1-5% Top: E2E(end-to-end) Tests Does the whole thing work
+      10-15% Mid:  Integration Tests 
+      80-90% Base:  Unit Test - Singular feature or class (Isoloation Tests)
+
+How do we test?
+    We cannot test protected, private, we can only test the API.
+    We test these methods by testing the public methods using the private methods
+    Goal is to test the public facing API
+
+Rspec
+    Domain-Specific Language (DSL) wtritten in Ruby for Ruby
+    Meta-gem that includes rspec-core, rspec-expectations and rspec mocks
+    Not the only Ruby testing library, others include minitest and cucumber.
+
     
