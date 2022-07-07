@@ -1,0 +1,14 @@
+# frozen_string_literal: true
+#Terminal Commands
+#bundle init
+#add gems
+#bundle install
+#rspec --init
+#create lib
+#name spec "fileNameInLib_spec.rb"
+source "https://rubygems.org"
+
+gem "pry"
+gem "byebug"
+gem "rspec"
+# gem "rails"
