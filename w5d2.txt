@@ -1,0 +1,63 @@
+Introduction to SQL - lets get mentally prepared
+Learning Goals
+    Understand why we need databases
+    Know what a Relational database management system is 
+    be able to access data in a database and perform basic operations
+
+How do websites store data?
+    Databases!
+
+    there are different models of databses 
+        they differ in how they store data and how that data can therefore be accessed
+    were going to use a relational database model. Relational refers to the use of tables to store
+    and organize data   
+        each table is referred to as a relation, as it is a collection of related data entries
+
+    Two parts to storing and accessing data:
+        1 DataBase management system
+            an application that stores data at scale and can be queried for data
+        2 The Querying Language
+            The language we use to interact with the database management system to create our database, insert data,
+            and query it for data
+
+    RDBMS - Relational Database management system
+        An application that stores data at scale and organizes the data in tables
+
+        we will be using
+            postgreSQL 
+                well be using this for the next two days and for most projects
+            SQLite
+                thursdays projects
+
+Relational Data:
+
+SQL: The way we communicate with our database
+    Structured Query Language
+    DSL - Domain Specific Language
+
+What can SQL do?
+    can create new databases
+    create new tables in a database
+    insert records in a database
+    update records in a database
+    delete records in a database
+    can retrieve data from a database
+
+Column Types
+    Every column must have a declared data type, some common ones:
+    varchar
+    boolean
+    integer
+    float
+    date
+    many, many more
+    see postgreSQL.org docs for more information on data data Types
+
+    postgresql shell commands
+        psql
+        CREATE DATABASE lecture;
+        psql lecture
+        \d - list tables
+        \d table - show schema for table
+        \? to list meta commands
+        end queries with a ;
