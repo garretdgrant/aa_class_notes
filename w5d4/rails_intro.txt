@@ -1,0 +1,18 @@
+What is rails?
+    Rails Definition: A server-side mvc web-application framework
+    framework - "bundle of stuff"
+MVC
+    model, views, controllers
+
+Active Record - an ORM framework (The M in MVC)
+    Allows us to:
+    - Represent models and their data
+    - Represent associations between data
+    - Validate models before they get persisted to the database
+    - perform database operations (CRUD) in OOP fashion 
+    
+
+
+
+
+    
