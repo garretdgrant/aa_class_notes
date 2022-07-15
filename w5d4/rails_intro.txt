@@ -11,8 +11,116 @@ Active Record - an ORM framework (The M in MVC)
     - Validate models before they get persisted to the database
     - perform database operations (CRUD) in OOP fashion 
     
+Migrations
+Models
+Assosciations 
+
+Migrations
+    - Incremental and reversible chages made to a database schema, allowing it to evolve over time.
+    - Not just a Rails thing - ubiquitous to app frameworks that work with relational DBs.
+    - Rails allows you to use an easy Ruby DSL(domain-specific language) to descripe changes to 
+        your tables, rather than write raw SQL
+
+    garretg@GPad:~/App_Academy/aa_class_notes/w5d4$ rails new DogeBird -d=postgresql --minimal -T -G
+    sudo service postgresql start - start postgresql
+     rails db:create - create databases
+     rails generate migration CreateUsers - create table file
+     rails db:migrate - after finishing migration creates a schema.rb file
+     rails db:migrate:status - look at the status of the Migrations
+     rails g migration AddAgeAndFaveCoin -- make additions to tables (migrations)
+
+     common commands
+        rails g migration Create{TableName}
+        rails g migration Add{ColumnName}To{TableName}
+        rails g migration Remove{ColumnName}From{TableName}
+        rails g migration AddIndexTo{TableName}
+
+     common migration methods
+        create_table
+        add_column
+        change_column
+        remove_index
+
+    Changing existing migrations
+        you cant just edit the migration and run the migration again
+        instead you have two options
+        1 write a new migration (much preferred)
+        2 rollback:
+            roll back
+            edit migration
+            re migrate
 
 
 
+    Models
+        The central component of the MVC pattern
+        A class that represents and directly manages the data, logic and rules for a table
+            typicall contains: validations, asssociations, and custom methods
+            inherits from ApplicationRecord (which inherits from ActiveRecord)
+        There is a one-to-one correspondence between a model and a table
+        An instance of this class represents a row sin our table 
 
-    
+Database Constraints vs Model Validations
+    Model validations are best used to provide error messages to users interacting with your app
+    its highly likely that:
+        you will interact with the database at some point outside of Rails
+        you will make a mistake in your code that causes invalid data
+    Database constraints are the last line of defense for data-integrity
+    Writing constraints is work, but they will save you a lot of pain
+
+Common Validations
+    validates :some_column, presence: true (plural, prewritten validations )
+        similar to null: false
+    validates :other_column, uniqueness: true
+        similar to unique: true
+    Custom Validations
+
+Asssociations
+    connections between tow ActiveRecord models
+    make common operations simpler and easier in your code. 
+    we dont have to write anymore sql joins
+
+example 
+    class Strike < ApplicationRecord
+        belongs_to :student,  --individual strike belongs to individual student
+        primary_key: :id, -- in the student table
+        foreign_key: :student_id, --in the current table
+        class_name: :Student --other table (model)
+    end
+
+Strategy
+    start with belongs_to
+    write corresponding has_many
+
+ActiveRecord commands called on classes User.find() etc
+find() - finds a single record on id
+
+first
+    finds the first record ordered by primary_key
+last
+    finds the last record ordered by primary_key
+find_by()
+    look up the first matching record based on any cooumn value
+
+rails db:reset --drop tables, reruns migrations, reseeds. 
+
+where/where.not allows you to specify exact value to match, range of values, or multiple values
+    to find
+Ways to pass in conditions:
+    User.where(email: "email.com")
+    sanitize
+        User.where("email = (?)", "email.com")
+        User.where("age >=  ? And age < ?", 20, 99)
+
+User.select(:favorite_coin).group(:favorite_coin)
+User.where(favorite_coin: ["Bitcoin", "babyElon"]).order(username: :desc)
+
+Chaining ActiveRecord methods
+group() returns distinct records grouped by the passed
+having() filters grouped records that match statement, must have group
+order() returns roecords ordered by passed attribute
+offset() offsets the ordered records by the number passed
+limit() limits the returned records to the numbek passed
+
+
+
