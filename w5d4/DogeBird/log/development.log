@@ -472,3 +472,44 @@ FOREIGN KEY ("liker_id")
   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."favorite_coin" IN ($1, $2)[0m  [["favorite_coin", "Bitcoin"], ["favorite_coin", "babyElon"]]
   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."favorite_coin" IN ($1, $2) ORDER BY "users"."username" DESC[0m  [["favorite_coin", "Bitcoin"], ["favorite_coin", "babyElon"]]
   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."favorite_coin" IN ($1, $2) ORDER BY "users"."username" DESC[0m  [["favorite_coin", "Bitcoin"], ["favorite_coin", "babyElon"]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."favorite_coin" IN ($1, $2) ORDER BY "users"."username" DESC[0m  [["favorite_coin", "Bitcoin"], ["favorite_coin", "babyElon"]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."favorite_coin" IN ($1, $2) AND "users"."age" = $3 ORDER BY "users"."username" DESC[0m  [["favorite_coin", "Bitcoin"], ["favorite_coin", "babyElon"], ["age", 29]]
+  [1m[36mUser Average (2.2ms)[0m  [1m[34mSELECT AVG("users"."id") FROM "users"[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Count (0.8ms)[0m  [1m[34mSELECT COUNT("users"."id") FROM "users"[0m
+  [1m[36mUser Sum (0.8ms)[0m  [1m[34mSELECT SUM("users"."id") FROM "users"[0m
+  [1m[36mUser Sum (0.6ms)[0m  [1m[34mSELECT SUM("users"."id") FROM "users"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (age >= 10)[0m
+  [1m[36mChirp Load (2.3ms)[0m  [1m[34mSELECT "chirps".* FROM "chirps" WHERE "chirps"."author_id" = $1[0m  [["author_id", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT * FROM "users" INNER JOIN "chirps" ON "chirps"."author_id" = "users"."id"[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT * FROM "users" INNER JOIN "chirps" ON "chirps"."author_id" = "users"."id" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT * FROM "users" INNER JOIN "chirps" ON "chirps"."author_id" = "users"."id" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT * FROM "users" INNER JOIN "chirps" ON "chirps"."author_id" = "users"."id"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM "users" INNER JOIN "chirps" ON "chirps"."author_id" = "users"."id"[0m
+  [1m[36mChirp Load (0.4ms)[0m  [1m[34mSELECT "chirps".* FROM "chirps" WHERE "chirps"."author_id" = $1[0m  [["author_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mChirp Load (0.8ms)[0m  [1m[34mSELECT "chirps".* FROM "chirps" WHERE "chirps"."author_id" = $1[0m  [["author_id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mChirp Load (0.6ms)[0m  [1m[34mSELECT "chirps".* FROM "chirps" WHERE "chirps"."author_id" = $1[0m  [["author_id", 3]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT chirps FROM "users" INNER JOIN "chirps" ON "chirps"."author_id" = "users"."id"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "chirps" FROM "users" INNER JOIN "chirps" ON "chirps"."author_id" = "users"."id"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "chirp" FROM "users" INNER JOIN "chirps" ON "chirps"."author_id" = "users"."id"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "chirp" FROM "users" INNER JOIN "chirps" ON "chirps"."author_id" = "users"."id" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "chirp" FROM "users" INNER JOIN "chirps" ON "chirps"."author_id" = "users"."id"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "chirp" FROM "users" INNER JOIN "chirps" ON "chirps"."author_id" = "users"."id" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "body" FROM "users" INNER JOIN "chirps" ON "chirps"."author_id" = "users"."id"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "chirps" ON "chirps"."author_id" = "users"."id"[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "chirps" ON "chirps"."author_id" = "users"."id"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT * FROM "users" INNER JOIN "chirps" ON "chirps"."author_id" = "users"."id"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT body FROM "users" INNER JOIN "chirps" ON "chirps"."author_id" = "users"."id"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT body FROM "users" INNER JOIN "chirps" ON "chirps"."author_id" = "users"."id"[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT body FROM "users" INNER JOIN "chirps" ON "chirps"."author_id" = "users"."id"[0m
+  [1m[36mChirp Load (1.8ms)[0m  [1m[34mSELECT "chirps"."body" FROM "chirps" INNER JOIN "likes" ON "likes"."chirp_id" = "chirps"."id" GROUP BY "chirps"."id" HAVING (COUNT(*) >= 3)[0m
+  [1m[36mChirp Load (0.8ms)[0m  [1m[34mSELECT "chirps"."body" FROM "chirps" INNER JOIN "likes" ON "likes"."chirp_id" = "chirps"."id" GROUP BY "chirps"."id"[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mChirp Load (0.6ms)[0m  [1m[34mSELECT "chirps".* FROM "chirps" WHERE "chirps"."author_id" = $1[0m  [["author_id", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mChirp Load (0.5ms)[0m  [1m[34mSELECT "chirps".* FROM "chirps" WHERE "chirps"."author_id" = $1[0m  [["author_id", 1]]
+  [1m[36mChirp Load (0.5ms)[0m  [1m[34mSELECT "chirps".* FROM "chirps" WHERE "chirps"."author_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["author_id", 1], ["LIMIT", 11]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mChirp Load (0.5ms)[0m  [1m[34mSELECT "chirps".* FROM "chirps" WHERE "chirps"."author_id" = $1[0m  [["author_id", 1]]

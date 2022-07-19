@@ -14,6 +14,7 @@ elon = User.create!(username: 'TheMusk', email: 'Musk@gmail.com', favorite_coin:
 
 
 
+
 # Chirps
 chirp1 = Chirp.create!(author_id: mike.id, body: "test body")
 chirp2 = Chirp.create!(author_id: garret.id, body: "woof woof")

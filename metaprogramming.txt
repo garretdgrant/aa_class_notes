@@ -1,0 +1,13 @@
+what is programming?
+    the essence of programming is defining behaviour
+    metaprogramming is defining behaviour that will define future behaviour
+What is metaprogramming
+    often used to dnamically define a suite of similar methods based on undetermined future input to reduce duplicate code
+    examples
+        attr_reader
+        belongs_to
+        validates
+
+    We should explore with meta programming
+
+    

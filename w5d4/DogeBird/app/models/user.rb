@@ -40,4 +40,6 @@ class User < ApplicationRecord
             through: :chirp_likes,
             source: :liker
 
+        users = User.where("age >= ?", 10)
+
         end
