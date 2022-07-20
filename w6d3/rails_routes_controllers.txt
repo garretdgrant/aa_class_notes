@@ -1,0 +1,105 @@
+Framework 
+    skeleton
+    rails - MVC framework
+    M - Model; what we are and what we can do 
+    V - View; Will be able to access 
+    C - Controller; Handles Requests and builds responses; Just a class, code in a file
+    
+    HTTP Request Response Cycle
+        when you type google.com and hit enter
+            1 computer(client) sends http request to a server
+                (Get google.com page)
+            2 the server handles request and formulates an appropriate responses
+            3 http response is sent back to the client
+
+    HTTP:
+        protocol for communication over the internet
+        clients and servers communicate via messages (requests and responses)
+        http requests and responses are just strings
+        http defines how request and response messages are formatted and transmitted
+
+    Components of an HTTP Request
+        Method (HTTP Verb) descrones what action to perform (GET POST PATCH PUTS DELETE)
+        POST - Insert into data base
+        GET - Get from database
+        path (eg /users) - a string that specifies the resource being requested
+        Query String (eg ?loc=new+york - optional) may further specify the resource requested
+        Body (eg username=janedoe - optional) - additional data from the client
+        Body and Get do not go together
+
+    Anatomy of a URL
+        the path and query string are part of the URL
+        - the path in an http request is simply the path that is relative to the domain
+        -we wont worry about domain for now
+        https://google.com/anatomy-of-a-url (Component Breakdown)
+        https:// - protocol
+        google.com - domain name
+        /anatomy-of-a-url - path
+
+        Flow of an instagram like. 
+        click heart, creates http request, router sends to likes controller that has actions (methods),
+        controller sends to view, view logic fills heart with conditional statements. 
+
+HTTP methods
+    GET - get something from the database
+    POST - insert something into the database
+    PATCH/PUT - change something in the database
+    DELETE - remove something from the database
+
+Components of a HTTP Response
+    Status(eg 200 302 404)
+        indicates the type of response(successful or not)
+        common response codes - link in slides
+    Body(eg actual html doc, or data formatted as JSON)
+        actual data/content from the serever
+        this is old school, but knowing is necessary 
+
+Rails Router
+    router instantiates an instance of a controller and invokes an action on that controller
+    (creates new instance and invokes the action)
+    variables in the controller only last for one request-response cycle, because a new instance is created for each cycle.
+
+REST is a standardized way to interpret an http request and extrapolate the desired response from the server
+    A convention that maps HTTP verbs onto CRUD actions
+    POST -->      Create (insert record into database)
+    GET -->       Read
+    PATCH/PUT --> Update
+    DELETE -->    Destroy
+
+    A RESTful API defines a predictable way for us to access and manipulate resources in our application.
+        reminder: API = Application Programming Interface 
+
+Setting up Routes
+    generate 7 standard RESTful routes for a resource
+        resources :users
+    Can add only or except option to include/Exlude --> SEE DOGEBIRD RAILS PROJECT
+    Create a custome route
+    rails guide on routing https://edgeguides.rubyonrails.org/routing.html
+
+Example requests to RESTful API
+Get /users query all users
+GET /users/1 query for user with id 1
+POST /users create a new user
+
+Controllers
+    Takes in HTTP requests, decides what to do with them and how to respond
+    handles requests and builds responses
+    work with models and views to populate a response to be sent back to the client
+
+Controller Set up
+    see DOGEBIRD PROJECT
+
+Params
+    three ways to pass params in an HTTP request as follows:
+        Using wildcards inside a route (/users/:id)
+        Via the query string (/path?param1=val1*param2=val2)
+        inside the request body (usually built using a form, key val pairs) -- should avoid for get requests
+
+
+        Form -- how does this get to controller
+           params = {UN => 'GG'
+            FN => 'Garret'
+            LN => 'Grant'
+            Password => '******'}
+            Submit
+        Sends this in a hash as params -----> params[:FN] --> 'Garret'

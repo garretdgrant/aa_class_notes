@@ -36,7 +36,7 @@ class Dog < Pet
         Dog.add_pet
     end
 
-    def do_this_then_that(this, that)
+    def do_this_then_that(this, that) #(:sleep)
         self.send(this)
         self.send(that)
     end
@@ -55,6 +55,12 @@ class Dog < Pet
             end
         end
     end
+
+    def method_missing(method_name, *args)
+        self.class.create_tricks(method_name)
+        self.send(method_name, *args)
+    end
+
 
     # def sleep
     #     puts 'sleeping!'

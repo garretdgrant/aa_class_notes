@@ -513,3 +513,367 @@ FOREIGN KEY ("liker_id")
   [1m[36mChirp Load (0.5ms)[0m  [1m[34mSELECT "chirps".* FROM "chirps" WHERE "chirps"."author_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["author_id", 1], ["LIMIT", 11]]
   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mChirp Load (0.5ms)[0m  [1m[34mSELECT "chirps".* FROM "chirps" WHERE "chirps"."author_id" = $1[0m  [["author_id", 1]]
+Started GET "/" for ::1 at 2022-07-20 11:17:20 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/garretg/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/garretg/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 21.8ms | Allocations: 545)
+Completed 200 OK in 38ms (Views: 28.3ms | ActiveRecord: 0.0ms | Allocations: 2824)
+
+
+Started GET "/" for ::1 at 2022-07-20 11:20:58 -0700
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/garretg/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/garretg/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.4ms | Allocations: 304)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 992)
+
+
+Started GET "/" for ::1 at 2022-07-20 11:22:36 -0700
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/garretg/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/garretg/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | Allocations: 34)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 301)
+
+
+Started GET "/" for ::1 at 2022-07-20 11:22:57 -0700
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/garretg/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/garretg/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 26)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 223)
+
+
+Started GET "/users" for ::1 at 2022-07-20 11:23:22 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 67ms (Views: 23.4ms | ActiveRecord: 28.0ms | Allocations: 8983)
+
+
+Started GET "/users/1" for ::1 at 2022-07-20 11:25:36 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 120670ms (ActiveRecord: 0.0ms | Allocations: 89026)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `show'
+app/controllers/users_controller.rb:11:in `show'
+Started GET "/users/1" for ::1 at 2022-07-20 11:27:37 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `show'
+No template found for UsersController#show, rendering head :no_content
+Completed 204 No Content in 499ms (ActiveRecord: 15.5ms | Allocations: 1961418)
+
+
+Started GET "/users/1" for ::1 at 2022-07-20 11:28:27 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `show'
+Completed 200 OK in 419ms (Views: 18.0ms | ActiveRecord: 15.7ms | Allocations: 2380863)
+
+
+Started GET "/users/2" for ::1 at 2022-07-20 11:28:36 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `show'
+Completed 200 OK in 73ms (Views: 23.0ms | ActiveRecord: 3.0ms | Allocations: 322031)
+
+
+Started GET "/users/3" for ::1 at 2022-07-20 11:35:43 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `show'
+Completed 200 OK in 391ms (Views: 14.0ms | ActiveRecord: 142.3ms | Allocations: 1330132)
+
+
+Started POST "/users/?user[:username]" for ::1 at 2022-07-20 12:03:14 -0700
+  
+ArgumentError (Before process_action callback :verify_authenticiity_token has not been defined):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started POST "/users/?user[:username]=Taylor%20Swift" for ::1 at 2022-07-20 12:03:33 -0700
+  
+ArgumentError (Before process_action callback :verify_authenticiity_token has not been defined):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started POST "/users/?user[:username]=Taylor%20Swift" for ::1 at 2022-07-20 12:03:58 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{":username"=>"Taylor Swift"}}
+[31mUnpermitted parameter: ::username. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fd635b94318>, params: {"user"=>{":username"=>"Taylor Swift"}, "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 404 Not Found in 937ms (Views: 2.7ms | ActiveRecord: 39.1ms | Allocations: 6397457)
+
+
+Started POST "/users/?user[:username]=Taylor%20Swift&user[:age]=25&user[:email]=tswift@gmail.com&user[:favorite_coin]=Bitcoin" for ::1 at 2022-07-20 12:05:18 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{":username"=>"Taylor Swift", ":age"=>"25", ":email"=>"tswift@gmail.com", ":favorite_coin"=>"Bitcoin"}}
+[31mUnpermitted parameters: ::username, ::age, ::email, ::favorite_coin. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fd635ede000>, params: {"user"=>{":username"=>"Taylor Swift", ":age"=>"25", ":email"=>"tswift@gmail.com", ":favorite_coin"=>"Bitcoin"}, "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (3.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 404 Not Found in 268ms (Views: 3.7ms | ActiveRecord: 8.7ms | Allocations: 1757483)
+
+
+Started POST "/users/?user[username]=Taylor%20Swift&user[:age]=25&user[:email]=tswift@gmail.com&user[:favorite_coin]=Bitcoin" for ::1 at 2022-07-20 12:05:32 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"Taylor Swift", ":age"=>"25", ":email"=>"tswift@gmail.com", ":favorite_coin"=>"Bitcoin"}}
+[31mUnpermitted parameters: ::age, ::email, ::favorite_coin. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fd635f28308>, params: {"user"=>{"username"=>"Taylor Swift", ":age"=>"25", ":email"=>"tswift@gmail.com", ":favorite_coin"=>"Bitcoin"}, "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (3.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Taylor Swift"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 404 Not Found in 275ms (Views: 2.9ms | ActiveRecord: 9.5ms | Allocations: 1573627)
+
+
+Started POST "/users/?user[username]=Taylor%20Swift&user[age]=25&user[email]=tswift@gmail.com&user[favorite_coin]=Bitcoin" for ::1 at 2022-07-20 12:05:51 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"Taylor Swift", "age"=>"25", "email"=>"tswift@gmail.com", "favorite_coin"=>"Bitcoin"}}
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Taylor Swift"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Exists? (3.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tswift@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (16.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at", "age", "favorite_coin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Taylor Swift"], ["email", "tswift@gmail.com"], ["created_at", "2022-07-20 19:05:51.344824"], ["updated_at", "2022-07-20 19:05:51.344824"], ["age", 25], ["favorite_coin", "Bitcoin"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Completed 200 OK in 337ms (Views: 11.6ms | ActiveRecord: 29.1ms | Allocations: 1373761)
+
+
+Started PATCH "/users/4?user[age]=500" for ::1 at 2022-07-20 12:10:35 -0700
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"age"=>"500"}, "id"=>"4"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Taylor Swift"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tswift@gmail.com"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Update (15.7ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "age" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2022-07-20 19:10:36.263163"], ["age", 500], ["id", 4]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+Completed 200 OK in 435ms (Views: 9.8ms | ActiveRecord: 42.2ms | Allocations: 3763686)
+
+
+Started PATCH "/users/4" for ::1 at 2022-07-20 12:11:06 -0700
+Processing by UsersController#update as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `update'
+Completed 400 Bad Request in 24ms (ActiveRecord: 1.1ms | Allocations: 264332)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:40:in `user_params'
+app/controllers/users_controller.rb:30:in `update'
+Started PATCH "/users/4?user[id]=500" for ::1 at 2022-07-20 12:11:22 -0700
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"id"=>"500"}, "id"=>"4"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `update'
+[31mUnpermitted parameter: :id. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x00007fd63586be48>, params: {"user"=>{"id"=>"500"}, "controller"=>"users", "action"=>"update", "id"=>"4"} }[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Exists? (6.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Taylor Swift"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Exists? (3.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tswift@gmail.com"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+Completed 200 OK in 218ms (Views: 14.3ms | ActiveRecord: 14.0ms | Allocations: 1373388)
+
+
+Started PATCH "/users/4?user[id]=500" for ::1 at 2022-07-20 12:11:26 -0700
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"id"=>"500"}, "id"=>"4"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `update'
+[31mUnpermitted parameter: :id. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x00007fd6359ed140>, params: {"user"=>{"id"=>"500"}, "controller"=>"users", "action"=>"update", "id"=>"4"} }[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Taylor Swift"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tswift@gmail.com"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+Completed 200 OK in 120ms (Views: 5.6ms | ActiveRecord: 7.6ms | Allocations: 1373386)
+
+
+Started PATCH "/users/4?user[banana]=500" for ::1 at 2022-07-20 12:11:52 -0700
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"banana"=>"500"}, "id"=>"4"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `update'
+[31mUnpermitted parameter: :banana. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x00007fd635f01a78>, params: {"user"=>{"banana"=>"500"}, "controller"=>"users", "action"=>"update", "id"=>"4"} }[0m
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Taylor Swift"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tswift@gmail.com"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+Completed 200 OK in 169ms (Views: 6.7ms | ActiveRecord: 9.0ms | Allocations: 1373386)
+
+
+Started PATCH "/users/4?user[banana]=500" for ::1 at 2022-07-20 12:11:55 -0700
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"banana"=>"500"}, "id"=>"4"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `update'
+[31mUnpermitted parameter: :banana. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x00007fd638a75c40>, params: {"user"=>{"banana"=>"500"}, "controller"=>"users", "action"=>"update", "id"=>"4"} }[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Taylor Swift"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tswift@gmail.com"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+Completed 200 OK in 156ms (Views: 4.7ms | ActiveRecord: 7.8ms | Allocations: 1373385)
+
+
+Started PATCH "/users/4?user[banana]=500&user[junk]=this%20should%20not%20work" for ::1 at 2022-07-20 12:12:21 -0700
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"banana"=>"500", "junk"=>"this should not work"}, "id"=>"4"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `update'
+[31mUnpermitted parameters: :banana, :junk. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x00007fd635a38280>, params: {"user"=>{"banana"=>"500", "junk"=>"this should not work"}, "controller"=>"users", "action"=>"update", "id"=>"4"} }[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Taylor Swift"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tswift@gmail.com"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+Completed 200 OK in 168ms (Views: 8.1ms | ActiveRecord: 8.6ms | Allocations: 1374867)
+
+
+Started PATCH "/users/4?user[banana]=500&user[favorite_coin]=Eth%20baby" for ::1 at 2022-07-20 12:13:55 -0700
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"banana"=>"500", "favorite_coin"=>"Eth baby"}, "id"=>"4"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `update'
+[31mUnpermitted parameter: :banana. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x00007fd635929308>, params: {"user"=>{"banana"=>"500", "favorite_coin"=>"Eth baby"}, "controller"=>"users", "action"=>"update", "id"=>"4"} }[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Taylor Swift"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tswift@gmail.com"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Update (1.8ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "favorite_coin" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2022-07-20 19:13:55.950692"], ["favorite_coin", "Eth baby"], ["id", 4]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+Completed 200 OK in 184ms (Views: 7.4ms | ActiveRecord: 12.3ms | Allocations: 1632736)
+
+
+Started PATCH "/users/4?user[banana]=22&user[favorite_coin]=Eth%20baby" for ::1 at 2022-07-20 12:14:03 -0700
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"banana"=>"22", "favorite_coin"=>"Eth baby"}, "id"=>"4"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `update'
+[31mUnpermitted parameter: :banana. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x00007fd6388c3050>, params: {"user"=>{"banana"=>"22", "favorite_coin"=>"Eth baby"}, "controller"=>"users", "action"=>"update", "id"=>"4"} }[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Exists? (3.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Taylor Swift"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tswift@gmail.com"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:30:in `update'
+Completed 200 OK in 195ms (Views: 13.9ms | ActiveRecord: 10.4ms | Allocations: 1393129)
+
+
+Started DELETE "/users/4" for ::1 at 2022-07-20 12:15:34 -0700
+Processing by UsersController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:39:in `destroy'
+  [1m[36mChirp Load (1.3ms)[0m  [1m[34mSELECT "chirps".* FROM "chirps" WHERE "chirps"."author_id" = $1[0m  [["author_id", 4]]
+  ↳ app/controllers/users_controller.rb:39:in `destroy'
+  [1m[36mLike Load (17.7ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."liker_id" = $1[0m  [["liker_id", 4]]
+  ↳ app/controllers/users_controller.rb:39:in `destroy'
+  [1m[36mUser Destroy (3.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/users_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:39:in `destroy'
+No template found for UsersController#destroy, rendering head :no_content
+Completed 204 No Content in 685ms (ActiveRecord: 50.4ms | Allocations: 4787710)
+
+
+Started DELETE "/users/4" for ::1 at 2022-07-20 12:16:07 -0700
+Processing by UsersController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `destroy'
+Completed 500 Internal Server Error in 297ms (ActiveRecord: 3.1ms | Allocations: 4292090)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass
+
+       if @user.destroy
+               ^^^^^^^^):
+  
+app/controllers/users_controller.rb:39:in `destroy'
+Started DELETE "/users/1" for ::1 at 2022-07-20 12:16:39 -0700
+Processing by UsersController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:39:in `destroy'
+  [1m[36mChirp Load (1.6ms)[0m  [1m[34mSELECT "chirps".* FROM "chirps" WHERE "chirps"."author_id" = $1[0m  [["author_id", 1]]
+  ↳ app/controllers/users_controller.rb:39:in `destroy'
+  [1m[36mLike Load (1.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."chirp_id" = $1[0m  [["chirp_id", 1]]
+  ↳ app/controllers/users_controller.rb:39:in `destroy'
+  [1m[36mChirp Destroy (2.0ms)[0m  [1m[31mDELETE FROM "chirps" WHERE "chirps"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/users_controller.rb:39:in `destroy'
+  [1m[36mLike Load (1.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."liker_id" = $1[0m  [["liker_id", 1]]
+  ↳ app/controllers/users_controller.rb:39:in `destroy'
+  [1m[36mUser Destroy (2.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/users_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (13.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:39:in `destroy'
+Completed 200 OK in 514ms (Views: 11.6ms | ActiveRecord: 36.0ms | Allocations: 4873257)
+
+
